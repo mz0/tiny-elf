@@ -1,4 +1,4 @@
-section .data
+section .rodata
     msg db "hello, world!",10
 
 section .text

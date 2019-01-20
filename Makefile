@@ -1,5 +1,6 @@
 hello: hello.o
 	ld.lld-9 -o hello hello.o
+	strip -R .comment hello
 
 hello-gnu: hello.o
 	ld -o hello hello.o
