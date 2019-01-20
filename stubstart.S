@@ -2,6 +2,6 @@
 
 _start:
     call main
-    mov  $60, %eax # exit
-    movq $42, %rdi   
+    mov %rax, %rdi  # callee passes exit code in RAX
+    mov  $60, %eax  # _exit(exit_code). RDI holds the 1st parameter
     syscall
