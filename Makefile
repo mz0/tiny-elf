@@ -14,8 +14,8 @@ helloc: helloc.o stubstart.o Makefile
 	strip -R .data helloc
 	strip -R .bss helloc
 
-helloc.o: hello.c
-	gcc -c -nostdlib  -o helloc.o hello.c
+helloc.o: hello.c Makefile
+	gcc -c -nostdlib -fomit-frame-pointer -o helloc.o hello.c
 
 stubstart.o: stubstart.S
 	gcc -c -nostdlib  -o stubstart.o stubstart.S
