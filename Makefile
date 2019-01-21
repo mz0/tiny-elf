@@ -1,5 +1,5 @@
-hello: hello.o
-	ld.lld-9 -o hello hello.o
+hello: hello.o Makefile
+	ld.lld -o hello hello.o
 	strip -R .comment hello
 
 hello-gnu: hello.o
@@ -9,7 +9,7 @@ hello.o: hello.asm
 	nasm -f elf64 -o hello.o hello.asm
 
 helloc: helloc.o stubstart.o Makefile
-	ld.lld-9 -o helloc helloc.o stubstart.o
+	ld.lld -o helloc helloc.o stubstart.o
 	strip -R .eh_frame helloc
 	strip -R .comment helloc
 	strip -R .data helloc
