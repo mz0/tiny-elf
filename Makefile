@@ -2,6 +2,11 @@ hello: hello.o Makefile
 	ld.lld -o hello hello.o
 	strip -R '!.text' -R '!.rodata' -R '.*' hello
 
+tiny: tiny.asm Makefile
+	nasm -f bin -o tiny tiny.asm
+	chmod +x tiny
+	@echo "Run:\n ./tiny ; echo $$ \b? ; wc -c tiny"
+
 hello-gnu: hello.o
 	ld -o hello hello.o
 
