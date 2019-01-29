@@ -7,6 +7,11 @@ tiny: tiny.asm Makefile
 	chmod +x tiny
 	@echo "Run:\n ./tiny ; echo $$ \b? ; wc -c tiny"
 
+small64: small64.asm Makefile
+	nasm -f bin -o small64 small64.asm
+	chmod +x small64
+	@echo "Run:\n ./small64 ; echo $$ \b? ; wc -c small64"
+
 hello-gnu: hello.o
 	ld -o hello hello.o
 
@@ -27,4 +32,4 @@ helloc-gnu: hello.c stubstart.S
 	gcc -nostdlib stubstart.S -o helloc hello.c
 
 clean:
-	rm -f hello *.o helloc
+	rm -f hello *.o helloc tiny small64
