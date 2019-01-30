@@ -5,12 +5,12 @@ hello: hello.o Makefile
 tiny: tiny.asm Makefile
 	nasm -f bin -o tiny tiny.asm
 	chmod +x tiny
-	@echo "Run:\n ./tiny ; echo $$ \b? ; wc -c tiny"
+	@echo "Run:\n./tiny ; echo $$ \b? ; wc -c tiny"
 
 small64: small64.asm Makefile
 	nasm -f bin -o small64 small64.asm
 	chmod +x small64
-	@echo "Run:\n ./small64 ; echo $$ \b? ; wc -c small64"
+	@echo "Run:\n./small64 ; echo $$ \b? ; wc -c small64"
 
 hello-gnu: hello.o
 	ld -o hello hello.o
