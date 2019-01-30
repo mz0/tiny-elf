@@ -8,7 +8,7 @@
 ; 132 small64
 
 BITS 64
-        org     0x00400000
+        org     0x00010000
 
 ehdr:				; Elf64_Ehdr
         db      0x7f, "ELF", 2, 1, 1, 0 ; e_ident
